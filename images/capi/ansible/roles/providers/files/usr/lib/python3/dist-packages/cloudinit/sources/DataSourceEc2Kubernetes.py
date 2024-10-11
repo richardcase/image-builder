@@ -90,7 +90,9 @@ class DataSourceEc2Kubernetes(DataSourceEc2.DataSourceEc2):
 
 
 class DataSourceEc2KubernetesLocal(DataSourceEc2Kubernetes):
-    perform_dhcp_setup = True  # Use dhcp before querying metadata
+#    perform_dhcp_setup = True  # Use dhcp before querying metadata
+    def _get_data(self):
+        return False
 
 
 # Used to match classes to dependencies
